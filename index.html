@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Php-coding-and-environment-recommendations by auss</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/auss/php-coding-and-environment-recommendations">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/auss/php-coding-and-environment-recommendations/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/auss/php-coding-and-environment-recommendations/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Php-coding-and-environment-recommendations</h1>
+          <p></p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/auss">auss</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a name="overwiev" class="anchor" href="#overwiev"><span class="octicon octicon-link"></span></a>Overwiev</h1>
+
+<p>This document describes the mandatory requirements and recommendations for coding in PHP and creating PHP environments.</p>
+
+<p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
+"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
+interpreted as described in <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a>.</p>
+
+<h2>
+<a name="1-recommended-php-version" class="anchor" href="#1-recommended-php-version"><span class="octicon octicon-link"></span></a>1. Recommended PHP version</h2>
+
+<p>Recommended PHP version is 5.5.x. Developer SHALL NOT use version lower than 5.4. All versions MUST be up to date.</p>
+
+<h2>
+<a name="2-development-environment" class="anchor" href="#2-development-environment"><span class="octicon octicon-link"></span></a>2. Development environment</h2>
+
+<ul>
+<li>Developer MUST use PHP with Apache2. </li>
+<li>It's RECOMMENDED to use *nix OS (Linux, MacOS X)</li>
+<li><p>Developer SHOULD use debugging extensions (<a href="http://xdebug.org">XDebug</a>, <a href="https://github.com/facebook/xhprof">XHProf</a>)</p></li>
+</ul><h2>
+<a name="3-production-and-staging-environent" class="anchor" href="#3-production-and-staging-environent"><span class="octicon octicon-link"></span></a>3. Production and staging environent</h2>
+
+<ul>
+<li>Access to remote servers SHOULD be secured by public key</li>
+<li>Debugging extensions MUST NOT be used in production environment</li>
+<li>All used PHP extenstions SHOULD be in stable version. If unstable version is used it MUST be properly testen prior to deployment</li>
+<li>When setting up remote server directory listing MUST be disabled</li>
+<li><p>Project backend MUST NOT be accessible from the Internet. It's RECOMMENDED to place it in home dir and create symlink to /var/www</p></li>
+</ul><h2>
+<a name="4-basic-coding-standards" class="anchor" href="#4-basic-coding-standards"><span class="octicon octicon-link"></span></a>4. Basic coding standards</h2>
+
+<ul>
+<li>Code MUST follow all rules outlined in <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md">PSR-0</a>
+</li>
+<li>Code MUST follow all rules outlined in <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md">PSR-1</a>
+</li>
+<li>Code MUST follow all rules outlined in <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md">PSR-2</a>
+</li>
+<li>Code MUST follow all rules outlined in <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md">PSR-3</a>
+</li>
+</ul>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
