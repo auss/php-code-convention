@@ -6,7 +6,7 @@
 [XDebug]: http://xdebug.org
 [XHProf]: https://github.com/facebook/xhprof
 
-PHP Code Convention
+Overwiev
 ===================
 This document describes the mandatory requirements and recommendations for coding in PHP and creating PHP environments.
 
@@ -32,7 +32,7 @@ Recommended PHP version is 5.5.x. Developer SHALL NOT use version lower than 5.4
 - When setting up remote server directory listing MUST be disabled
 - Project backend MUST NOT be accessible from the Internet. It's RECOMMENDED to place it in home dir and create symlink to /var/www
 
-3. Basic coding standards
+4. Basic coding standards
 -----------
 - Code MUST follow all rules outlined in [PSR-0][]
 - Code MUST follow all rules outlined in [PSR-1][]
