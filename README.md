@@ -46,7 +46,8 @@ Every developer SHOULD be able to read code like a book. Proper naming is much b
 
 ### 5.1. Variables
 - Variable name MUST describe its purpose. 
-- All variables MUST be declared in ```camelCase```
+- Variable MUST be declared in ```camelCase```
+- Variable MUST start only with letter or number
 
 Example:
 ```php
