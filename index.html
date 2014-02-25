@@ -4,40 +4,30 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Php-coding-and-environment-recommendations by auss</title>
+
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
   <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/auss/php-coding-and-environment-recommendations">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/auss/php-coding-and-environment-recommendations/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/auss/php-coding-and-environment-recommendations/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
-
     <div class="wrapper">
+      <header>
+        <h1>Php-coding-and-environment-recommendations</h1>
+        <p></p>
 
+        <p class="view"><a href="https://github.com/auss/php-coding-and-environment-recommendations">View the Project on GitHub <small>auss/php-coding-and-environment-recommendations</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/auss/php-coding-and-environment-recommendations/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/auss/php-coding-and-environment-recommendations/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/auss/php-coding-and-environment-recommendations">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
       <section>
-        <div id="title">
-          <h1>Php-coding-and-environment-recommendations</h1>
-          <p></p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/auss">auss</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
-
         <h1>
 <a name="overwiev" class="anchor" href="#overwiev"><span class="octicon octicon-link"></span></a>Overwiev</h1>
 
@@ -60,13 +50,13 @@ interpreted as described in <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 21
 <li>It's RECOMMENDED to use *nix OS (Linux, MacOS X)</li>
 <li><p>Developer SHOULD use debugging extensions (<a href="http://xdebug.org">XDebug</a>, <a href="https://github.com/facebook/xhprof">XHProf</a>)</p></li>
 </ul><h2>
-<a name="3-production-and-staging-environent" class="anchor" href="#3-production-and-staging-environent"><span class="octicon octicon-link"></span></a>3. Production and staging environent</h2>
+<a name="3-production-and-staging-environment" class="anchor" href="#3-production-and-staging-environment"><span class="octicon octicon-link"></span></a>3. Production and staging environment</h2>
 
 <ul>
-<li>Access to remote servers SHOULD be secured by public key</li>
+<li>Access to remote servers SHOULD be available only by Public Key Infrastructure</li>
 <li>Debugging extensions MUST NOT be used in production environment</li>
-<li>All used PHP extenstions SHOULD be in stable version. If unstable version is used it MUST be properly testen prior to deployment</li>
-<li>When setting up remote server directory listing MUST be disabled</li>
+<li>All used PHP extenstions SHOULD be in stable version. If unstable version is used it MUST be properly tested prior to deployment</li>
+<li>When setting up remote server, directory listing MUST be disabled</li>
 <li><p>Project backend MUST NOT be accessible from the Internet. It's RECOMMENDED to place it in home dir and create symlink to /var/www</p></li>
 </ul><h2>
 <a name="4-basic-coding-standards" class="anchor" href="#4-basic-coding-standards"><span class="octicon octicon-link"></span></a>4. Basic coding standards</h2>
@@ -78,13 +68,247 @@ interpreted as described in <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 21
 </li>
 <li>Code MUST follow all rules outlined in <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md">PSR-2</a>
 </li>
-<li>Code MUST follow all rules outlined in <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md">PSR-3</a>
+<li><p>Code MUST follow all rules outlined in <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md">PSR-3</a></p></li>
+</ul><h2>
+<a name="5-naming-conventions" class="anchor" href="#5-naming-conventions"><span class="octicon octicon-link"></span></a>5. Naming conventions</h2>
+
+<p>Every developer SHOULD be able to read code like a book. Proper naming is much better than hundrets of documentation lines.</p>
+
+<h3>
+<a name="51-variables" class="anchor" href="#51-variables"><span class="octicon octicon-link"></span></a>5.1. Variables</h3>
+
+<ul>
+<li>Variable name MUST describe its purpose. </li>
+<li>All variables MUST be declared in <code>camelCase</code>
+</li>
+</ul><p>Example:</p>
+
+<div class="highlight highlight-php"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// bad</span>
+<span class="nv">$m</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Movie</span><span class="p">();</span>
+<span class="nv">$mc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MovieCollection</span><span class="p">();</span>
+
+<span class="c1">// good</span>
+<span class="nv">$movie</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Movie</span><span class="p">()</span>
+<span class="nv">$movieCollection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MovieCollection</span><span class="p">();</span>
+</pre></div>
+
+<h3>
+<a name="52-functions" class="anchor" href="#52-functions"><span class="octicon octicon-link"></span></a>5.2. Functions</h3>
+
+<ul>
+<li>Function visibility MUST be declared (public, protected, private). </li>
+<li>Function declaration MUST follow given pattern: <code>public [static] function functionName()</code>
+</li>
+<li>Functions MUST be sorted by visibility:
+
+<ul>
+<li>public</li>
+<li>protected</li>
+<li>private</li>
+</ul>
+</li>
+<li>Function name MUST describe its purpose using verbs like is, has, can, get, set. Example:</li>
+</ul><div class="highlight highlight-php"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">//bad</span>
+<span class="k">class</span> <span class="nc">BadMovie</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$rate</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">rated</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">rate</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">rate</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">rate</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="c1">//good</span>
+<span class="k">class</span> <span class="nc">GoodMovie</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$rate</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">hasRate</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">rate</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getRate</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">rate</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3>
+<a name="53-classes" class="anchor" href="#53-classes"><span class="octicon octicon-link"></span></a>5.3. Classes</h3>
+
+<ul>
+<li>Class name MUST describe its purpose. 
+Example:</li>
+</ul><div class="highlight highlight-php"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="c1">// bad</span>
+<span class="k">class</span> <span class="nc">Movies</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="k">class</span> <span class="nc">MovieCollection</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+
+<ul>
+<li>Class name MAY NOT be unique in whole project scope. It's handled by namespaces.
+Example:</li>
+</ul><div class="highlight highlight-php"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">namespace</span> <span class="nx">\BM\Api1</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">Response</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="k">namespace</span> <span class="nx">\BM\Api2</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">Response</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+
+<ul>
+<li>Special types of classes MUST be followed by suffixes:
+
+<ul>
+<li>*Trait for Traits: <code>trait SomeTrait</code>
+</li>
+<li>*Collection for collections: <code>class SomeCollection</code>
+</li>
+<li>*Controller for controllers: <code>class SomeController</code>
 </li>
 </ul>
-      </section>
+</li>
+<li><p>Class MUST be used only for the purpose it was designed for. For example: Developer CAN NOT use MoviesCollection to store collection of Cookies.</p></li>
+</ul><h2>
+<a name="6-exceptions" class="anchor" href="#6-exceptions"><span class="octicon octicon-link"></span></a>6. Exceptions</h2>
 
+<ul>
+<li>Custom exception constructor MUST accept exception message</li>
+<li>Custom exception MAY have default message. </li>
+<li>When message is passed as parameter in constructor it MUST override default message</li>
+<li>Custom exceptions SHOULD extend one of two base types:
+
+<ul>
+<li>InternalException - content of this exception MUST NOT be displayed (except for dev environment)</li>
+<li>FriendlyException - content of this exception MAY be displayed</li>
+</ul>
+</li>
+<li>All exceptions SHOULD be handled</li>
+<li>InternalException MUST be reported by email</li>
+<li>FriendlyException MAY be reported by email</li>
+<li>Different types of exceptions SHOULD be catched in multiple catch blocks</li>
+<li>There SHOULD be catch block for default Exception</li>
+<li>All exceptions MUST be attached to variable $e</li>
+</ul><div class="highlight highlight-php"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">try</span> <span class="p">{</span>
+
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">FirstException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">SeconException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+
+<h2>
+<a name="7-typehinting" class="anchor" href="#7-typehinting"><span class="octicon octicon-link"></span></a>7. Typehinting</h2>
+
+<ul>
+<li>It's RECOMMENDED to hint the type of variable passed as function argument.</li>
+<li>When variable is returned from another function it's type SHOULD be validated. </li>
+</ul><p>Example:</p>
+
+<div class="highlight highlight-php"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// bad</span>
+<span class="k">class</span> <span class="nc">BadMovie</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$director</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setDirector</span><span class="p">(</span><span class="nv">$director</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">director</span> <span class="o">=</span> <span class="nv">$director</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getDirector</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">director</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nv">$badMovie</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BadMovie</span><span class="p">();</span>
+<span class="nv">$director</span> <span class="o">=</span> <span class="nv">$badMovie</span><span class="o">-&gt;</span><span class="na">getDirector</span><span class="p">();</span>
+<span class="nv">$director</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">();</span>
+
+<span class="c1">// good</span>
+<span class="k">class</span> <span class="nc">GoodMovie</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$director</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setDirector</span><span class="p">(</span><span class="nx">Director</span> <span class="nv">$director</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">director</span> <span class="o">=</span> <span class="nv">$director</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getDirector</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">director</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nv">$movie</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Movie</span><span class="p">();</span>
+<span class="nv">$director</span> <span class="o">=</span> <span class="nv">$movie</span><span class="o">-&gt;</span><span class="na">getDirector</span><span class="p">();</span>
+
+<span class="c1">// bad </span>
+<span class="k">if</span><span class="p">(</span> <span class="nv">$director</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$director</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="k">if</span><span class="p">(</span> <span class="nv">$director</span> <span class="nx">instanceof</span> <span class="nx">Director</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$director</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2>
+<a name="8-return-statements" class="anchor" href="#8-return-statements"><span class="octicon octicon-link"></span></a>8. Return statements</h2>
+
+<ul>
+<li><p>Return statement SHOULD be preceded by new line unless return is the only statement in function</p></li>
+</ul><h2>
+<a name="9-collections" class="anchor" href="#9-collections"><span class="octicon octicon-link"></span></a>9. Collections</h2>
+
+<ul>
+<li>Collection name MUST be followed by suffix Collection <code>class SomeCollection</code>
+</li>
+<li>Collection MUST be iterable</li>
+<li>It's RECOMMENDED to extend ArrayObject</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/auss">auss</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    <script src="javascripts/scale.fix.js"></script>
     
   </body>
 </html>
