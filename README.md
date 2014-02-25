@@ -24,7 +24,7 @@ Recommended PHP version is 5.5.x. Developer SHALL NOT use version lower than 5.4
 - It's RECOMMENDED to use *nix OS (Linux, MacOS X)
 - Developer SHOULD use debugging extensions ([XDebug][], [XHProf][])
 
-3. Production and staging environent
+3. Production and staging environment
 -----------
 - Access to remote servers SHOULD be secured by public key
 - Debugging extensions MUST NOT be used in production environment
@@ -38,3 +38,64 @@ Recommended PHP version is 5.5.x. Developer SHALL NOT use version lower than 5.4
 - Code MUST follow all rules outlined in [PSR-1][]
 - Code MUST follow all rules outlined in [PSR-2][]
 - Code MUST follow all rules outlined in [PSR-3][]
+
+5. Naming conventions
+-----------
+Every developer SHOULD be able to read code like a book. Proper naming is much better than hundrets of documentation lines.
+
+Therefore:
+- variable name MUST describe what object instance is it. Example:
+```php
+<?php
+
+// bad
+$m = new Movie();
+$mc = new MovieCollection();
+
+// good
+$movie = new Movie()
+$movieCollection = new MovieCollection();
+```
+- function name MUST describe it's purpose using verbs like is, has, can, get, set. Example:
+```php
+<?php
+
+//bad
+class BadMovie
+{
+    protected $watchable = false;
+    protected $rate = 0;
+    
+    public function watchable()
+    {
+        return $this->watchable;
+    }
+    
+    
+    public function rated()
+    {
+        return $this->rated > 0;
+    }
+}
+
+
+//good
+class GoodMovie
+{
+    protected $watchable = false;
+    protected $rate = 0;
+    
+    public function canBeWatched()
+    {
+        return $this->watchable;
+    }
+    
+    
+    public function isRated()
+    {
+        return $this->rated > 0;
+    }
+}
+```
+
+
